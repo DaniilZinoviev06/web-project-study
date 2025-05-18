@@ -1,11 +1,19 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-
+  <div class="app">
+    <Navbar />
+    <main class="content">
+      <slot></slot>
+    </main>
+  </div>
 </template>
 
-<style scoped>
+<script>
+import Navbar from '@/components/nav.vue'
 
+export default {
+  components: { Navbar }
+}
+</script>
+
+<style>
 </style>
