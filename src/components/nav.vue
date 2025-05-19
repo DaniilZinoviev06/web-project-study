@@ -17,7 +17,7 @@
       <nav :class="{ 'mobile-visible': mobileMenuOpen }">
         <ul class="main-menu">
           <li class="dropdown-parent">
-            <a href="news.html">Новости</a>
+            <p>Новости</p>
             <div class="dropdown-menu">
               <div class="dropdown-menu-inner">
                 <div class="dropdown-right">
@@ -68,7 +68,7 @@
           </li>
 
           <li class="dropdown-parent">
-            <a href="#">Инструкции</a>
+            <p>Инструкции</p>
             <div class="dropdown-menu">
               <div class="dropdown-menu-inner">
                 <div class="dropdown-left">
@@ -87,10 +87,10 @@
                           </a>
                         </td>
                         <td class="dropdown-cell-container">
-                          <div class="dropdown-cell">
+                          <a href="doc_2.html" class="dropdown-cell">
                             <strong class="dropdown-title">СОЗДАНИЕ ЗАГРУЗОЧНОЙ ФЛЕШКИ</strong>
                             <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
-                          </div>
+                          </a>
                         </td>
                       </tr>
                       <tr>
@@ -101,24 +101,24 @@
                           </a>
                         </td>
                         <td class="dropdown-cell-container">
-                          <div class="dropdown-cell">
+                          <a href="doc_2.html" class="dropdown-cell">
                             <strong class="dropdown-title">ШАГ 4</strong>
                             <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
-                          </div>
+                          </a>
                         </td>
                       </tr>
                       <tr>
                         <td class="dropdown-cell-container">
-                          <div class="dropdown-cell">
+                          <a href="doc_2.html" class="dropdown-cell">
                             <strong class="dropdown-title">ШАГ 5</strong>
                             <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
-                          </div>
+                          </a>
                         </td>
                         <td class="dropdown-cell-container">
-                          <div class="dropdown-cell">
+                          <a href="doc_2.html" class="dropdown-cell">
                             <strong class="dropdown-title">ШАГ 6</strong>
                             <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
-                          </div>
+                          </a>
                         </td>
                       </tr>
                     </tbody>
@@ -129,7 +129,7 @@
           </li>
 
           <li class="dropdown-parent">
-            <a href="#">Проблемы</a>
+            <p>Проблемы</p>
             <div class="dropdown-menu">
               <div class="dropdown-menu-inner">
                 <div class="dropdown-left">
@@ -148,10 +148,10 @@
                           </a>
                         </td>
                         <td class="dropdown-cell-container">
-                          <div class="dropdown-cell">
+                          <a href="problem_1.html" class="dropdown-cell">
                             <strong class="dropdown-title">Проблема с сетью</strong>
                             <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
-                          </div>
+                          </a>
                         </td>
                       </tr>
                       <tr>
@@ -162,18 +162,18 @@
                           </a>
                         </td>
                         <td class="dropdown-cell-container">
-                          <div class="dropdown-cell">
+                          <a href="problem_1.html" class="dropdown-cell">
                             <strong class="dropdown-title">Проблема с пакетами</strong>
                             <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
-                          </div>
+                          </a>
                         </td>
                       </tr>
                       <tr>
                         <td class="dropdown-cell-container">
-                          <div class="dropdown-cell">
+                          <a href="problem_1.html" class="dropdown-cell">
                             <strong class="dropdown-title">Другие проблемы</strong>
                             <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
-                          </div>
+                          </a>
                         </td>
                         <td class="dropdown-cell-container empty-cell"></td>
                       </tr>
@@ -184,10 +184,9 @@
             </div>
           </li>
 
-          <li><a href="#">Контакты</a></li>
+          <li><p>Контакты</p></li>
         </ul>
       </nav>
-      <div style="width: 80px"></div>
     </div>
   </header>
 </template>
