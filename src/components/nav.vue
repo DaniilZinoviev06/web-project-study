@@ -2,9 +2,19 @@
   <header>
     <div class="top-bar">
       <div class="logo-block">
-         <img :src="logo" alt="Логотип">
+        <img :src="logo" alt="Логотип">
       </div>
-      <nav>
+      <button
+        class="mobile-menu-toggle"
+        @click="toggleMobileMenu"
+        aria-label="Меню"
+        aria-expanded="mobileMenuOpen"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <nav :class="{ 'mobile-visible': mobileMenuOpen }">
         <ul class="main-menu">
           <li class="dropdown-parent">
             <a href="news.html">Новости</a>
@@ -188,7 +198,13 @@ import logo from "@/assets/arch_logo.png";
 export default {
   data() {
     return {
+      mobileMenuOpen: false,
       logo: logo
+    }
+  },
+  methods: {
+    toggleMobileMenu() {
+      this.mobileMenuOpen = !this.mobileMenuOpen;
     }
   }
 }
