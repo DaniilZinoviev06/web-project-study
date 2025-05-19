@@ -1,0 +1,233 @@
+body {
+    background: #f6f9fc;
+    font-family: 'Fira Mono', monospace;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    z-index: 1000;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: #333;
+    position: relative;
+    z-index: 10;
+}
+
+.logo-block img {
+    width: 180px;
+    margin-right: 16px;
+}
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.main-menu {
+    display: flex;
+    list-style: none;
+    gap: 68px;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    position: relative;
+}
+
+.main-menu > li {
+    position: relative;
+    cursor: pointer;
+}
+
+.main-menu a {
+    text-decoration: none;
+    color: #999;
+    padding: 17px 22px;
+    transition: color 0.2s, background 0.2s;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.main-menu > li:hover > a {
+    color: #fff;
+    background: #444444;
+}
+
+h3 {
+    color: black;
+}
+
+.dropdown-menu {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 95px;
+    background: #e8eef2;
+    min-height: 200px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    border-radius: 0 0 8px 8px;
+    z-index: 999;
+    border-top: 3px solid #2299de;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+.dropdown-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.dropdown-table tbody {
+    display: table-row-group;
+}
+
+.dropdown-table td {
+    padding: 0;
+    vertical-align: top;
+    border: none;
+}
+
+.dropdown-cell-container {
+    width: 50%;
+    height: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.dropdown-cell {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    min-height: 120px;
+    padding: 15px;
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    background-color: #e8eef2;
+    box-sizing: border-box;
+}
+
+.dropdown-cell:hover {
+    background-color: #dbeaf5;
+}
+
+.dropdown-title {
+    display: block;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    color: #333;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dropdown-desc {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dropdown-category {
+    display: block;
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #222;
+    margin: 0 auto;
+    letter-spacing: 3px;
+}
+
+.empty-cell {
+    background-color: transparent;
+    border: none;
+}
+
+.dropdown-menu-inner {
+    display: flex;
+    flex-direction: row;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0;
+    background: none;
+}
+
+.dropdown-menu.active {
+    display: block;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.dropdown-left {
+    padding: 25px 30px 20px 30px;
+    border-right: 2px solid #d3dbe1;
+    width: 220px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dropdown-link {
+    display: block;
+    margin: 6px 0;
+    padding: 2px 0;
+    color: #2299de;
+    font-size: 20px;
+    font-weight: 500;
+    margin:0 auto;
+    transition: font-weight 0.15s, color 0.15s;
+}
+
+.dropdown-link.active {
+    color: #8852f1;
+}
+
+.dropdown-right {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding: 25px 30px 20px 30px;
+    flex: 1;
+}
+
+@media (max-width: 1200px) {
+    .dropdown-menu-inner {
+        max-width: 990px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .dropdown-menu-inner {
+        max-width: 90vw;
+        flex-direction: column;
+    }
+    .dropdown-right {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
