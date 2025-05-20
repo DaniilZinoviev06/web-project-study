@@ -72,9 +72,8 @@
             <div class="dropdown-menu">
               <div class="dropdown-menu-inner">
                 <div class="dropdown-left">
-                  <span class="dropdown-category">ИНСТРУКЦИИ</span>
-                  <a href="#" class="dropdown-link active">Установка 1</a>
-                  <a href="#" class="dropdown-link">Установка 2</a>
+                  <a href="#" class="dropdown-link active">Установка - первый способ</a>
+                  <a href="#" class="dropdown-link">Установка - второй способ</a>
                 </div>
                 <div class="dropdown-right">
                   <table class="dropdown-table">
@@ -133,49 +132,31 @@
             <div class="dropdown-menu">
               <div class="dropdown-menu-inner">
                 <div class="dropdown-left">
-                  <span class="dropdown-category">ПРОБЛЕМЫ</span>
-                  <a href="#" class="dropdown-link active">Проблема 1</a>
-                  <a href="#" class="dropdown-link">Проблема 2</a>
+                  <a href="#"
+                     class="dropdown-link"
+                     :class="{ active: activeProblemsTab === 'common' }"
+                     @click.prevent="setActiveProblemsTab('common')">
+                    Частые проблемы
+                  </a>
+                  <a href="#"
+                     class="dropdown-link"
+                     :class="{ active: activeProblemsTab === 'rare' }"
+                     @click.prevent="setActiveProblemsTab('rare')">
+                    Редкие проблемы
+                  </a>
                 </div>
                 <div class="dropdown-right">
                   <table class="dropdown-table">
                     <tbody>
-                      <tr>
-                        <td class="dropdown-cell-container">
-                          <a href="problem_1.html" class="dropdown-cell">
-                            <strong class="dropdown-title">Проблема с загрузкой</strong>
-                            <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
+                      <tr v-for="(row, rowIndex) in currentProblemsRows" :key="rowIndex">
+                        <td v-for="(cell, cellIndex) in row" :key="cellIndex"
+                            class="dropdown-cell-container"
+                            :class="{ 'empty-cell': !cell }">
+                          <a v-if="cell" :href="cell.link" class="dropdown-cell">
+                            <strong class="dropdown-title">{{ cell.title }}</strong>
+                            <span class="dropdown-desc">{{ cell.desc }}</span>
                           </a>
                         </td>
-                        <td class="dropdown-cell-container">
-                          <a href="problem_1.html" class="dropdown-cell">
-                            <strong class="dropdown-title">Проблема с сетью</strong>
-                            <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="dropdown-cell-container">
-                          <a href="problem_1.html" class="dropdown-cell">
-                            <strong class="dropdown-title">Проблема с драйверами</strong>
-                            <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
-                          </a>
-                        </td>
-                        <td class="dropdown-cell-container">
-                          <a href="problem_1.html" class="dropdown-cell">
-                            <strong class="dropdown-title">Проблема с пакетами</strong>
-                            <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="dropdown-cell-container">
-                          <a href="problem_1.html" class="dropdown-cell">
-                            <strong class="dropdown-title">Другие проблемы</strong>
-                            <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
-                          </a>
-                        </td>
-                        <td class="dropdown-cell-container empty-cell"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -198,15 +179,95 @@ export default {
   data() {
     return {
       mobileMenuOpen: false,
-      logo: logo
+      logo: logo,
+      activeProblemsTab: 'common', // по умолчанию активна вкладка "Частые проблемы"
+      problemsData: {
+        common: [
+          [
+            {
+              title: "Проблема с загрузкой",
+              desc: "Частая проблема при загрузке системы после установки",
+              link: "problem_1.html"
+            },
+            {
+              title: "Проблема с сетью",
+              desc: "Типичные проблемы с подключением к интернету",
+              link: "problem_1.html"
+            }
+          ],
+          [
+            {
+              title: "Проблема с драйверами",
+              desc: "Решение распространенных проблем с драйверами",
+              link: "problem_1.html"
+            },
+            {
+              title: "Проблема с пакетами",
+              desc: "Частые ошибки при установке пакетов",
+              link: "problem_1.html"
+            }
+          ],
+          [
+            {
+              title: "Другие проблемы",
+              desc: "Разные часто встречающиеся проблемы",
+              link: "problem_1.html"
+            },
+            null
+          ]
+        ],
+        rare: [
+          [
+            {
+              title: "Редкая проблема с ядром",
+              desc: "Специфические проблемы с ядром Linux",
+              link: "problem_rare_1.html"
+            },
+            {
+              title: "Проблема с оборудованием",
+              desc: "Необычные проблемы с определенным железом",
+              link: "problem_rare_1.html"
+            }
+          ],
+          [
+            {
+              title: "Экзотические ошибки",
+              desc: "Очень редкие и странные ошибки",
+              link: "problem_rare_1.html"
+            },
+            {
+              title: "Проблемы с AUR",
+              desc: "Сложные случаи с AUR помощниками",
+              link: "problem_rare_1.html"
+            }
+          ],
+          [
+            {
+              title: "Другие редкие проблемы",
+              desc: "Прочие нечасто встречающиеся ситуации",
+              link: "problem_rare_1.html"
+            },
+            null
+          ]
+        ]
+      }
+    }
+  },
+  computed: {
+    currentProblemsRows() {
+      return this.problemsData[this.activeProblemsTab];
     }
   },
   methods: {
     toggleMobileMenu() {
       this.mobileMenuOpen = !this.mobileMenuOpen;
+    },
+    setActiveProblemsTab(tab) {
+      this.activeProblemsTab = tab;
     }
   }
 }
+
 
 document.addEventListener('DOMContentLoaded', function () {
     let dropdownParents = document.querySelectorAll('.dropdown-parent');
