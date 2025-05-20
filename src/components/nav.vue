@@ -72,51 +72,25 @@
             <div class="dropdown-menu">
               <div class="dropdown-menu-inner">
                 <div class="dropdown-left">
-                  <a href="#" class="dropdown-link active">Установка - первый способ</a>
-                  <a href="#" class="dropdown-link">Установка - второй способ</a>
+                  <p class="dropdown-link" :class="{ active: activeInstallTab === 'archinstall' }"
+                    @click.prevent="setActiveInstallTab('archinstall')">
+                    Archinstall (простой способ)
+                  </p>
+                  <p class="dropdown-link" :class="{ active: activeInstallTab === 'manual' }"
+                    @click.prevent="setActiveInstallTab('manual')">
+                    Ручная установка
+                  </p>
                 </div>
                 <div class="dropdown-right">
                   <table class="dropdown-table">
                     <tbody>
-                      <tr>
-                        <td class="dropdown-cell-container">
-                          <a href="doc_2.html" class="dropdown-cell">
-                            <strong class="dropdown-title">УСТАНОВКА ОБРАЗА</strong>
-                            <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
-                          </a>
-                        </td>
-                        <td class="dropdown-cell-container">
-                          <a href="doc_2.html" class="dropdown-cell">
-                            <strong class="dropdown-title">СОЗДАНИЕ ЗАГРУЗОЧНОЙ ФЛЕШКИ</strong>
-                            <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="dropdown-cell-container">
-                          <a href="doc_2.html" class="dropdown-cell">
-                            <strong class="dropdown-title">ШАГ 3</strong>
-                            <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
-                          </a>
-                        </td>
-                        <td class="dropdown-cell-container">
-                          <a href="doc_2.html" class="dropdown-cell">
-                            <strong class="dropdown-title">ШАГ 4</strong>
-                            <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="dropdown-cell-container">
-                          <a href="doc_2.html" class="dropdown-cell">
-                            <strong class="dropdown-title">ШАГ 5</strong>
-                            <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
-                          </a>
-                        </td>
-                        <td class="dropdown-cell-container">
-                          <a href="doc_2.html" class="dropdown-cell">
-                            <strong class="dropdown-title">ШАГ 6</strong>
-                            <span class="dropdown-desc">Lorem ipsum dolor sit amet, maecenas metus tortor, laoreet vitae.</span>
+                      <tr v-for="(row, rowIndex) in currentInstallRows" :key="rowIndex">
+                        <td v-for="(cell, cellIndex) in row" :key="cellIndex"
+                            class="dropdown-cell-container"
+                            :class="{ 'empty-cell': !cell }">
+                          <a v-if="cell" :href="cell.link" class="dropdown-cell">
+                            <strong class="dropdown-title">{{ cell.title }}</strong>
+                            <span class="dropdown-desc">{{ cell.desc }}</span>
                           </a>
                         </td>
                       </tr>
@@ -132,18 +106,14 @@
             <div class="dropdown-menu">
               <div class="dropdown-menu-inner">
                 <div class="dropdown-left">
-                  <a href="#"
-                     class="dropdown-link"
-                     :class="{ active: activeProblemsTab === 'common' }"
-                     @click.prevent="setActiveProblemsTab('common')">
+                  <p class="dropdown-link" :class="{ active: activeProblemsTab === 'common' }"
+                    @click.prevent="setActiveProblemsTab('common')">
                     Частые проблемы
-                  </a>
-                  <a href="#"
-                     class="dropdown-link"
-                     :class="{ active: activeProblemsTab === 'rare' }"
-                     @click.prevent="setActiveProblemsTab('rare')">
+                  </p>
+                  <p class="dropdown-link" :class="{ active: activeProblemsTab === 'rare' }"
+                    @click.prevent="setActiveProblemsTab('rare')">
                     Редкие проблемы
-                  </a>
+                  </p>
                 </div>
                 <div class="dropdown-right">
                   <table class="dropdown-table">
@@ -165,7 +135,33 @@
             </div>
           </li>
 
-          <li><p>Контакты</p></li>
+          <li class="dropdown-parent">
+            <p>Контакты</p>
+            <div class="dropdown-menu">
+              <div class="dropdown-menu-inner">
+                <div class="dropdown-right">
+                  <table class="dropdown-table">
+                    <tbody>
+                      <tr>
+                        <td class="dropdown-cell-container">
+                          <a href="news.html" class="dropdown-cell">
+                            <strong class="dropdown-title">Полезные ссылки</strong>
+                            <span class="dropdown-desc">Нажмите, чтобы перейти на страницу с полезными ссылками</span>
+                          </a>
+                        </td>
+                        <td class="dropdown-cell-container">
+                          <a href="news.html" class="dropdown-cell">
+                            <strong class="dropdown-title">О проекте</strong>
+                            <span class="dropdown-desc">Нажмите, чтобы перейти на страницу с информацией о проекте</span>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
@@ -173,14 +169,71 @@
 </template>
 
 <script>
-import logo from "@/assets/arch_logo.png";
+import logo from "@/assets/arch_logo.svg";
+import "@/scripts/index.js";
 
 export default {
   data() {
     return {
       mobileMenuOpen: false,
       logo: logo,
-      activeProblemsTab: 'common', // по умолчанию активна вкладка "Частые проблемы"
+      activeProblemsTab: 'common',
+      activeInstallTab: 'archinstall',
+      installData: {
+        archinstall: [
+          [
+            {
+              title: "ШАГ 1: Подготовка",
+              desc: "Скачайте образ Arch Linux и создайте загрузочную флешку",
+              link: "install_archinstall_1.html"
+            },
+            {
+              title: "ШАГ 2: Загрузка",
+              desc: "Загрузитесь с флешки и запустите archinstall",
+              link: "install_archinstall_2.html"
+            }
+          ],
+          [
+            {
+              title: "ШАГ 3: Настройка",
+              desc: "Выберите параметры установки в интерактивном меню",
+              link: "install_archinstall_3.html"
+            },
+            {
+              title: "ШАГ 4: Завершение",
+              desc: "Дождитесь окончания установки и перезагрузитесь",
+              link: "install_archinstall_4.html"
+            }
+          ]
+        ],
+        manual: [
+          [
+            {
+              title: "ШАГ 1: Разметка диска",
+              desc: "Создайте разделы с помощью fdisk или cfdisk",
+              link: "install_manual_1.html"
+            },
+            {
+              title: "ШАГ 2: Форматирование",
+              desc: "Отформатируйте разделы и создайте файловые системы",
+              link: "install_manual_2.html"
+            }
+          ],
+          [
+            {
+              title: "ШАГ 3: Монтирование",
+              desc: "Смонтируйте разделы и установите базовую систему",
+              link: "install_manual_3.html"
+            },
+            {
+              title: "ШАГ 4: Настройка",
+              desc: "Настройте систему, установите загрузчик и пользователя",
+              link: "install_manual_4.html"
+            }
+          ]
+        ]
+      },
+
       problemsData: {
         common: [
           [
@@ -256,6 +309,10 @@ export default {
   computed: {
     currentProblemsRows() {
       return this.problemsData[this.activeProblemsTab];
+    },
+
+    currentInstallRows() {
+      return this.installData[this.activeInstallTab];
     }
   },
   methods: {
@@ -264,46 +321,14 @@ export default {
     },
     setActiveProblemsTab(tab) {
       this.activeProblemsTab = tab;
+    },
+    setActiveInstallTab(tab) {
+      this.activeInstallTab = tab;
     }
   }
 }
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    let dropdownParents = document.querySelectorAll('.dropdown-parent');
-
-    dropdownParents.forEach(function(parent) {
-        let dropdownMenu = parent.querySelector('.dropdown-menu');
-        let hideTimeout;
-
-        parent.addEventListener('mouseenter', function() {
-            if (hideTimeout) clearTimeout(hideTimeout);
-            if(dropdownMenu) {
-                dropdownMenu.classList.add('active');
-            }
-        });
-
-        parent.addEventListener('mouseleave', function() {
-            hideTimeout = setTimeout(function() {
-                if(dropdownMenu) {
-                    dropdownMenu.classList.remove('active');
-                }
-            }, 100);
-        });
-
-        dropdownMenu.addEventListener('mouseenter', function() {
-            if (hideTimeout) clearTimeout(hideTimeout);
-                dropdownMenu.classList.add('active');
-            });
-            dropdownMenu.addEventListener('mouseleave', function() {
-                hideTimeout = setTimeout(function() {
-                dropdownMenu.classList.remove('active');
-            }, 100);
-        });
-    });
-});
 </script>
 
-<style lang="css">
+<style>
 @import "@/assets/styles/nav.css";
 </style>

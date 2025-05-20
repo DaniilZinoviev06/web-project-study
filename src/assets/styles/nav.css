@@ -397,6 +397,7 @@ nav {
         opacity: 1;
         display: none;
         margin-top: 5px;
+        width: 100%;
     }
 
     .dropdown-menu.active {
@@ -456,10 +457,6 @@ nav {
 }
 
 @media (max-width: 480px) {
-    header {
-        width:100%;
-    }
-
     .top-bar {
         padding: 8px 10px;
         height: 50px;
@@ -504,18 +501,19 @@ nav {
         white-space: normal;
     }
 
+    .dropdown-menu-inner {
+        width: 100%;
+    }
+
     .dropdown-cell {
         padding: 10px;
         margin-bottom: 10px;
+        width: 100%;
     }
 
     .dropdown-title,
     .dropdown-desc {
         white-space: normal;
         word-wrap: break-word;
-    }
-
-    .top-bar {
-        padding: 8px 10px;
     }
 }
