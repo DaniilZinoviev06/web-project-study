@@ -278,7 +278,7 @@ nav {
     flex: 1;
 }
 
-@media (1300px >= width >= 1000px) {
+@media (1300px >= width >= 992px) {
     .logo-block {
         display: none;
     }

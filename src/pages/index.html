@@ -2,9 +2,77 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Главная</title>
+  <title>Arch community - Главная</title>
+  <meta name="description" content="Arch community - сообщество разработчиков и энтузиастов open-source. Узнайте о наших проектах, присоединяйтесь к обсуждениям и участвуйте в развитии технологий">
+  <meta name="keywords" content="Arch, Linux">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/styles/index.css">
+  <script src="../scripts/index.js" defer></script>
 </head>
 <body>
+  <div class="container">
+    <div class="content-container">
+      <div class="gradient-icon"></div>
+    </div>
+    <a href="#" class="arch-link">Узнать о проекте</a>
+  </div>
+
+  <div class="news">
+    <a href="#">Новости</a>
+
+    <div class="news-block">
+      <a href="#" class="news-item">
+          <div class="news-image-container">
+            <img class="news-image" src="../assets/arch_zstd_news.webp" alt="arch_zstd" loading="lazy">
+          </div>
+          <div class="news-content">
+            <div class="news-title">Arch Linux официально переходит на Zstd по умолчанию для сжатия пакетов</div>
+            <div class="news-text">Разработчики Arch Linux объявили, что все новые пакеты теперь будут сжиматься с помощью алгоритма Zstd вместо XZ</div>
+          </div>
+      </a>
+
+      <div class="news-item">
+        <div class="news-image-container">
+          <img class="news-image" src="https://via.placeholder.com/800x400/1e88e5/ffffff?text=Нейроимплант" alt="Нейроимплант" loading="lazy">
+        </div>
+        <div class="news-content">
+          <div class="news-title">Вышел Arch Linux 2024.06.01</div>
+          <div class="news-text">Появился обновленный установочный образ Arch Linux 2024.06.01</div>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-image-container">
+          <img class="news-image" src="../assets/arch_update_news.webp" alt="arch_update" loading="lazy">
+        </div>
+        <div class="news-content">
+          <div class="news-title">Вышел Arch Linux 2024.06.01</div>
+          <div class="news-text">Появился обновленный установочный образ Arch Linux 2024.06.01</div>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-image-container">
+          <img class="news-image" src="../assets/arch_pacman_news.webp" alt="arch_pacman" loading="lazy">
+        </div>
+        <div class="news-content">
+          <div class="news-title">Pacman 6.1 получил новые функции</div>
+          <div class="news-text">Последняя версия пакетного менеджера Pacman (6.1) принесла улучшенную обработку зависимостей, более быстрые операции обновления и новые опции для работы с AUR-помощниками</div>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-image-container">
+          <img class="news-image" src="../assets/arch_wayland_news.webp" alt="arch_wayland" loading="lazy">
+        </div>
+        <div class="news-content">
+          <div class="news-title">Arch Linux тестирует Wayland по умолчанию в некоторых DE</div>
+          <div class="news-text">В рамках подготовки к будущему переходу на Wayland, Arch Linux начал тестировать сеансы Wayland в качестве стандартного варианта для окружений рабочего стола</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="app"></div>
   <script type="module" src="../main.js"></script>
 </body>

@@ -170,7 +170,7 @@
 
 <script>
 import logo from "@/assets/arch_logo.svg";
-import "@/scripts/index.js";
+import "@/scripts/nav.js";
 
 export default {
   data() {

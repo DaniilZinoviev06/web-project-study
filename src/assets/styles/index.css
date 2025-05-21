@@ -1,0 +1,119 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 95px;
+    width: auto;
+    height: 300px;
+    background: #ecf2f5;
+    position: relative;
+    overflow: hidden;
+}
+
+.gradient-icon {
+    width: 220px;
+    height: 220px;
+    background: linear-gradient(45deg, #1e88e5, #4fc3f7, #1e88e5);
+    background-size: 200% 200%;
+    animation: gradientFlow 3s ease infinite;
+    mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PHBhdGggZD0iTTI4LjQ2NSwzOC42MTFjMC40MTktMS4xMDUsMC42NjQtMi4zNjUsMC42NjQtMy43MTRjMC00LjEzMy0yLjIxMS03LjQ5NC00LjkyOS03LjQ5NGMtMi43NDEsMC00Ljk1MSwzLjM2MS00Ljk1MSw3LjQ5NGMwLDEuMzI2LDAuMjIxLDIuNTg2LDAuNjQxLDMuNjY5Yy05LjA0MSwwLjk1MS0xNS40MDcsNC43MzEtMTcuOTkzLDYuNDMyYzQuMzU1LTYuMjc4LDguOTA5LTEzLjYzOCwxMy4yNjItMjIuMTA1YzEuMDgzLTIuMTAxLDIuMTAxLTQuMTc4LDMuMDUtNi4yMTFjMC4zNzUsMC4yNDMsMC43NTEsMC41MDksMS4xNzEsMC43NzVjMS45NDUsMS4yMTUsMy43NTksMS44NzksNS4wODQsMi4yMzNjLTAuOTczLTAuNzMtMi4wMzMtMS42MTMtMy4xMTYtMi42OTdjLTAuODE3LTAuODE3LTEuNTQ3LTEuNjM3LTIuMTY3LTIuNDMzQzIxLjAxNiwxMC41MzgsMjIuNjA4LDYuNjY5LDI0LDNjMi4zMiw2LjE0NCw1LjIxNywxMi44NDIsOC44NDEsMTkuODkzYzIuMzQzLDQuNTMxLDQuNzMxLDguNzU0LDcuMTE3LDEyLjY0NGMtMC42ODUtMC4zNzUtMS40MzctMC43My0yLjIzMy0xLjAzOWMtMS4zNzEtMC41My0yLjY1Mi0wLjg2Mi0zLjc1OS0xLjA2YzEuNTAzLDAuNzUxLDMuMjUsMS43NDcsNS4wODQsMy4wNzNjMS4xOTQsMC44ODUsMi4yNTQsMS43NjksMy4xNjEsMi42MzFjMC4wMjEsMC4wMjEsMC4wMjEsMC4wMjEsMC4wNDUsMC4wNDVjMS4yNiwyLjA1NiwyLjU2NSwzLjk1NywzLjg0Niw1LjgxM0M0My41NjEsNDMuMzE5LDM3LjMwNiwzOS42MDUsMjguNDY1LDM4LjYxMXoiLz48L3N2Zz4=');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.arch-link {
+    background: linear-gradient(45deg, #1e88e5, #4fc3f7, #1e88e5);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 36px;
+    animation: gradientFlow 3s ease infinite;
+    transition: transform 0.3s;
+}
+
+.arch-link:hover {
+    font-size: 37px;
+    text-decoration: underline;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.news {
+    width: 100%;
+    height: 550px;
+    position: relative;
+    background: #f4f4f4;
+    padding:25px;
+}
+
+.news-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 25px;
+    width: 100%;
+    height: 500px;
+}
+
+.news-item {
+    margin-bottom: 40px;
+    width: 330px;
+    height: 500px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.news-image-container {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+.news-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.news-title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: #0066cc;
+}
+
+.news-text {
+    font-size: 15px;
+}
+
+.news-content {
+    padding: 15px;
+}
+
+.news > a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 35px;
+    margin-left: 13px;
+}
+
+.news a {
+    text-decoration: none;
+}
+
