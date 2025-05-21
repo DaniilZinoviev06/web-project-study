@@ -50,28 +50,25 @@
 
 .news {
     width: 100%;
-    height: 550px;
+    height: auto;
     position: relative;
     background: #f4f4f4;
-    padding:25px;
+    padding: 25px;
 }
 
 .news-block {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
     margin-top: 25px;
     width: 100%;
-    height: 500px;
 }
 
 .news-item {
-    margin-bottom: 40px;
-    width: 330px;
-    height: 500px;
     background: #fff;
     border-bottom: 1px solid #eee;
-    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .news-image-container {
@@ -118,3 +115,84 @@
     text-decoration: none;
 }
 
+
+@media (min-width: 1400px) and (max-width: 1700px) {
+    .news-block {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .news-item {
+        height: 450px;
+    }
+}
+
+@media (min-width: 1100px) and (max-width: 1400px) {
+    .news-block {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .news-item {
+        height: 450px;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1100px) {
+    .news-block {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news-title {
+        margin-bottom: 10px;
+        margin-top: -15px;
+    }
+
+    .news-image-container {
+        height: 240px;
+        background: #fff;
+    }
+}
+
+@media (min-width: 1701px) {
+    .news-block {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .news-item {
+        height: 500px;
+    }
+}
+
+@media (max-width: 799px) {
+    .news-item {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin: 0 auto 20px;
+        border-radius: 8px;
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+
+    .news-item {
+        width: 100%;
+        max-width: 500px;
+        height: 450px;
+    }
+
+    .news > a {
+        margin-top: 25px;
+        margin-left: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .news-image-container {
+        height: 240px;
+        background: #fff;
+    }
+
+    .news-title {
+        margin-bottom: 10px;
+        margin-top: -15px;
+    }
+}
