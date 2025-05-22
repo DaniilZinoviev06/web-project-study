@@ -1,0 +1,149 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1;
+}
+
+.page-title {
+    text-align: center;
+    margin-top: 95px;
+    font-size: 2.5rem;
+    color: #1e88e5;
+    background: linear-gradient(45deg, #1e88e5, #4fc3f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+}
+
+.author-qr, .about_us {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.author-qr:hover, .about_us:hover {
+    transform: translateY(-5px);
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #1e88e5, #4fc3f7);
+}
+
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    margin: 20px 0;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.qr-description {
+    text-align: center;
+    margin-top: 15px;
+    color: #555;
+}
+
+.github-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #2b3137;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.github-link:hover {
+    background: #1e2327;
+}
+
+.github-link i {
+    margin-right: 8px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.about-text {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.contact-list {
+    list-style: none;
+    margin-top: auto;
+}
+
+.contact-list li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-list i {
+    width: 30px;
+    color: #1e88e5;
+    font-size: 1.2rem;
+}
+
+.contact-link {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-link:hover {
+    color: #1e88e5;
+}

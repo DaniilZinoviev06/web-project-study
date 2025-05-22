@@ -17,8 +17,8 @@
                 <ul>
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="news.html">Новости</a></li>
-                    <li><a href="">О нас</a></li>
-                    <li><a href="">Контакты</a></li>
+                    <li><a href="contacts.html">О нас</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
                 </ul>
             </div>
         </div>

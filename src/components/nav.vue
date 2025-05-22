@@ -102,7 +102,7 @@
           </li>
 
           <li class="dropdown-parent">
-            <a href="news.html">Проблемы</a>
+            <a href="problems.html">Проблемы</a>
             <div class="dropdown-menu">
               <div class="dropdown-menu-inner">
                 <div class="dropdown-left">
@@ -136,7 +136,7 @@
           </li>
 
           <li class="dropdown-parent">
-            <a href="news.html">Контакты</a>
+            <a href="contacts.html">Контакты</a>
             <div class="dropdown-menu">
               <div class="dropdown-menu-inner">
                 <div class="dropdown-right">
@@ -144,13 +144,13 @@
                     <tbody>
                       <tr>
                         <td class="dropdown-cell-container">
-                          <a href="news.html" class="dropdown-cell">
+                          <a href="contacts.html" class="dropdown-cell">
                             <strong class="dropdown-title">Полезные ссылки</strong>
                             <span class="dropdown-desc">Нажмите, чтобы перейти на страницу с полезными ссылками</span>
                           </a>
                         </td>
                         <td class="dropdown-cell-container">
-                          <a href="news.html" class="dropdown-cell">
+                          <a href="contacts.html" class="dropdown-cell">
                             <strong class="dropdown-title">О проекте</strong>
                             <span class="dropdown-desc">Нажмите, чтобы перейти на страницу с информацией о проекте</span>
                           </a>
