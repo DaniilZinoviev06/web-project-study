@@ -2,9 +2,118 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Главная</title>
+  <title>Arch community - Новости</title>
+  <meta name="description" content="Arch community - сообщество разработчиков и энтузиастов open-source. Узнайте о наших проектах, присоединяйтесь к обсуждениям и участвуйте в развитии технологий">
+  <meta name="keywords" content="Новости, Arch, Linux">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../assets/styles/news.css">
 </head>
 <body>
+  <div class="container">
+    <h1 class="arch-link">Новости</h1>
+  </div>
+
+  <div class="nav-container">
+    <div class="nav-title">Быстрая навигация:</div>
+    <div class="nav-links">
+      <a href="#zstd" class="nav-link">Zstd сжатие</a>
+      <a href="#zfs" class="nav-link">ZFS поддержка</a>
+      <a href="#update" class="nav-link">Обновление 2024.06.01</a>
+      <a href="#pacman" class="nav-link">Pacman 6.1</a>
+      <a href="#wayland" class="nav-link">Wayland тестирование</a>
+    </div>
+  </div>
+
+  <div class="news-container">
+    <div id="zstd" class="news-card">
+      <div class="news-image-container">
+        <img class="news-image" src="../assets/arch_zstd_news.webp" alt="arch_zstd" loading="lazy">
+      </div>
+      <div class="news-text-container">
+        <h2 class="news-title">Arch Linux официально переходит на Zstd по умолчанию для сжатия пакетов</h2>
+        <div class="main-text">
+          <p>Разработчики Arch Linux объявили о важном изменении в системе сжатия пакетов. Начиная с июня 2024 года, все новые пакеты будут использовать алгоритм Zstd вместо традиционного XZ. Это изменение обещает значительно ускорить процесс установки и обновления пакетов, так как Zstd обеспечивает более высокую скорость распаковки при сравнимом уровне сжатия.</p>
+          <p>Переход на Zstd был протестирован в течение нескольких месяцев в тестовых репозиториях и показал отличные результаты. Пользователи могут ожидать уменьшения времени установки пакетов на 20-30% по сравнению с XZ.</p>
+        </div>
+        <div class="news-footer">
+          <span class="news-tag tag-blue">Обновления</span>
+          <div class="news-date">15.06.2024</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Новость 2 -->
+    <div id="zfs" class="news-card">
+      <div class="news-image-container">
+        <img class="news-image" src="../assets/arch_zfs_news.webp" alt="arch_zfs" loading="lazy">
+      </div>
+      <div class="news-text-container">
+        <h2 class="news-title">Arch Linux представил официальный образ с ZFS-поддержкой</h2>
+        <div class="main-text">
+          <p>Команда Arch Linux выпустила экспериментальный ISO-образ с предустановленной поддержкой файловой системы ZFS. Этот шаг направлен на удовлетворение потребностей пользователей, которым необходимы расширенные возможности управления данными, такие как моментальные снимки, клонирование и встроенное сжатие.</p>
+          <p>Образ включает в себя все необходимые драйверы и инструменты для работы с ZFS "из коробки". Разработчики предупреждают, что это экспериментальная версия, и рекомендуют использовать ее только опытным пользователям, знакомым с особенностями ZFS.</p>
+        </div>
+        <div class="news-footer">
+          <span class="news-tag tag-green">Экспериментально</span>
+          <div class="news-date">10.06.2024</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="update" class="news-card">
+      <div class="news-image-container">
+        <img class="news-image" src="../assets/arch_update_news.webp" alt="arch_update" loading="lazy">
+      </div>
+      <div class="news-text-container">
+        <h2 class="news-title">Вышел Arch Linux 2024.06.01</h2>
+        <div class="main-text">
+          <p>Опубликован обновленный установочный образ Arch Linux за июнь 2024 года. Этот релиз включает все последние обновления пакетов и исправления безопасности, актуальные на момент создания образа.</p>
+          <p>Среди ключевых изменений - обновленное ядро Linux 6.9, новая версия systemd и улучшенная поддержка современного оборудования. Образ также содержит исправления для нескольких критических уязвимостей, обнаруженных в предыдущих версиях.</p>
+        </div>
+        <div class="news-footer">
+          <span class="news-tag tag-purple">Релиз</span>
+          <div class="news-date">01.06.2024</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Новость 4 -->
+    <div id="pacman" class="news-card">
+      <div class="news-image-container">
+        <img class="news-image" src="../assets/arch_pacman_news.webp" alt="arch_pacman" loading="lazy">
+      </div>
+      <div class="news-text-container">
+        <h2 class="news-title">Pacman 6.1 получил новые функции</h2>
+        <div class="main-text">
+          <p>Вышла новая версия пакетного менеджера Pacman 6.1, который принес несколько значительных улучшений. Среди них - полностью переработанный алгоритм разрешения зависимостей, который теперь работает значительно быстрее, особенно при обновлении больших групп пакетов.</p>
+          <p>Также добавлена поддержка параллельных загрузок для AUR-помощников, улучшена обработка конфликтов пакетов и добавлены новые опции командной строки для более тонкого контроля над процессом установки и обновления.</p>
+        </div>
+        <div class="news-footer">
+          <span class="news-tag tag-yellow">Pacman</span>
+          <div class="news-date">25.05.2024</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="wayland" class="news-card">
+      <div class="news-image-container">
+        <img class="news-image" src="../assets/arch_wayland_news.webp" alt="arch_wayland" loading="lazy">
+      </div>
+      <div class="news-text-container">
+        <h2 class="news-title">Arch Linux тестирует Wayland по умолчанию в некоторых DE</h2>
+        <div class="main-text">
+          <p>В рамках подготовки к будущему переходу на Wayland, Arch Linux начал тестировать сеансы Wayland в качестве стандартного варианта для некоторых окружений рабочего стола. В первую очередь это касается GNOME и KDE Plasma, где поддержка Wayland уже достигла стабильного уровня.</p>
+          <p>Пользователи могут выбрать сеанс Wayland при входе в систему. Разработчики просят тестировать эту функциональность и сообщать о найденных проблемах, чтобы ускорить процесс полного перехода с Xorg на Wayland.</p>
+        </div>
+        <div class="news-footer">
+          <span class="news-tag tag-red">Тестирование</span>
+          <div class="news-date">18.05.2024</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="app"></div>
   <script type="module" src="../main.js"></script>
 </body>

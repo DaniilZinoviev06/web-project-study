@@ -2,7 +2,7 @@
   <header>
     <div class="top-bar">
       <div class="logo-block">
-        <img :src="logo" alt="Логотип">
+        <a href="index.html"><img :src="logo" alt="Логотип"></a>
       </div>
       <button
         class="mobile-menu-toggle"
@@ -17,7 +17,7 @@
       <nav :class="{ 'mobile-visible': mobileMenuOpen }">
         <ul class="main-menu">
           <li class="dropdown-parent">
-            <p>Новости</p>
+            <a href="news.html">Новости</a>
             <div class="dropdown-menu">
               <div class="dropdown-menu-inner">
                 <div class="dropdown-right">
@@ -31,7 +31,7 @@
                           </a>
                         </td>
                         <td class="dropdown-cell-container">
-                          <a href="news.html" class="dropdown-cell">
+                          <a href="news.html#zstd" class="dropdown-cell">
                             <strong class="dropdown-title">Arch Linux официально переходит на Zstd по умолчанию для сжатия пакетов</strong>
                             <span class="dropdown-desc">Разработчики Arch Linux объявили, что все новые пакеты теперь будут сжиматься с помощью алгоритма Zstd вместо XZ</span>
                           </a>
@@ -39,13 +39,13 @@
                       </tr>
                       <tr>
                         <td class="dropdown-cell-container">
-                          <a href="news_1.html" class="dropdown-cell">
+                          <a href="news.html#update" class="dropdown-cell">
                             <strong class="dropdown-title">Вышел Arch Linux 2024.06.01</strong>
                             <span class="dropdown-desc">Появился обновленный установочный образ Arch Linux 2024.06.01</span>
                           </a>
                         </td>
                         <td class="dropdown-cell-container">
-                          <a href="news.html" class="dropdown-cell">
+                          <a href="news.html#pacman" class="dropdown-cell">
                             <strong class="dropdown-title">Pacman 6.1 получил новые функции</strong>
                             <span class="dropdown-desc">Последняя версия пакетного менеджера Pacman (6.1) принесла улучшенную обработку зависимостей, более быстрые операции обновления и новые опции для работы с AUR-помощниками</span>
                           </a>
@@ -53,7 +53,7 @@
                       </tr>
                       <tr>
                         <td class="dropdown-cell-container">
-                          <a href="news.html" class="dropdown-cell">
+                          <a href="news.html#wayland" class="dropdown-cell">
                             <strong class="dropdown-title">Arch Linux тестирует Wayland по умолчанию в некоторых DE</strong>
                             <span class="dropdown-desc">В рамках подготовки к будущему переходу на Wayland, Arch Linux начал тестировать сеансы Wayland в качестве стандартного варианта для окружений рабочего стола</span>
                           </a>
@@ -68,7 +68,7 @@
           </li>
 
           <li class="dropdown-parent">
-            <p>Инструкции</p>
+            <a href="news.html">Инструкции</a>
             <div class="dropdown-menu">
               <div class="dropdown-menu-inner">
                 <div class="dropdown-left">
@@ -102,7 +102,7 @@
           </li>
 
           <li class="dropdown-parent">
-            <p>Проблемы</p>
+            <a href="news.html">Проблемы</a>
             <div class="dropdown-menu">
               <div class="dropdown-menu-inner">
                 <div class="dropdown-left">
@@ -136,7 +136,7 @@
           </li>
 
           <li class="dropdown-parent">
-            <p>Контакты</p>
+            <a href="news.html">Контакты</a>
             <div class="dropdown-menu">
               <div class="dropdown-menu-inner">
                 <div class="dropdown-right">
