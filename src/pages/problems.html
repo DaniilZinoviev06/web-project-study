@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Arch community - Проблемы</title>
+    <meta name="description" content="Arch community - сообщество разработчиков и энтузиастов open-source. Здесь Вы можете узнать об известных проблемах">
+    <meta name="keywords" content="Проблемы, ошибки, Arch, Linux">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../assets/styles/problems.css">
+    <script src="../scripts/problems.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="arch-link">Проблемы</h1>
+    </div>
+
+    <div class="nav-container">
+        <div class="nav-title">Быстрая навигация:</div>
+        <div class="nav-links">
+            <a href="#common-problems" class="nav-link">Частые проблемы</a>
+            <a href="#rare-problems" class="nav-link">Редкие проблемы</a>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <h2 id="common-problems" class="section-title">Частые проблемы</h2>
+
+        <div class="problems-grid">
+            <div class="problem-card">
+                <div class="card-header">Проблема с загрузкой</div>
+                <div class="card-body">
+                    <p class="card-desc">Частая проблема при загрузке системы после установки</p>
+
+                    <div class="command-wrapper">
+                        <div class="command-comment"># Восстановление загрузчика</div>
+                        <div class="command-container">
+                            <div class="command-text">bootctl --path=/boot install</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problem-card">
+                <div class="card-header">Проблема с сетью</div>
+                <div class="card-body">
+                    <p class="card-desc">Типичные проблемы с подключением к интернету</p>
+
+                    <div class="command-wrapper">
+                        <div class="command-comment"># Проверить интерфейсы</div>
+                        <div class="command-container">
+                            <div class="command-text">ip link</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-wrapper">
+                        <div class="command-comment"># Запустить dhcpcd</div>
+                        <div class="command-container">
+                            <div class="command-text">dhcpcd eth0</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problem-card">
+                <div class="card-header">Проблема с драйверами</div>
+                <div class="card-body">
+                    <p class="card-desc">Решение распространенных проблем с драйверами</p>
+
+                    <div class="command-wrapper">
+                        <div class="command-comment"># Поиск подходящих драйверов</div>
+                        <div class="command-container">
+                            <div class="command-text">lspci -k</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-wrapper">
+                        <div class="command-comment"># Установка драйверов NVIDIA</div>
+                        <div class="command-container">
+                            <div class="command-text">pacman -S nvidia nvidia-utils</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problem-card">
+                <div class="card-header">Проблема с пакетами</div>
+                <div class="card-body">
+                    <p class="card-desc">Частые ошибки при установке пакетов</p>
+
+                    <div class="command-wrapper">
+                        <div class="command-comment"># Обновить ключи</div>
+                        <div class="command-container">
+                            <div class="command-text">pacman-key --refresh-keys</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-wrapper">
+                        <div class="command-comment"># Обновить зеркала</div>
+                        <div class="command-container">
+                            <div class="command-text">pacman -Syu</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="rare-problems" class="section-title">Редкие проблемы</h2>
+
+        <div class="problems-grid">
+            <div class="problem-card">
+                <div class="card-header">Редкая проблема с ядром</div>
+                <div class="card-body">
+                    <p class="card-desc">Специфические проблемы с ядром Linux</p>
+
+                    <div class="command-wrapper">
+                        <div class="command-comment"># Загрузка предыдущего ядра</div>
+                        <div class="command-container">
+                            <div class="command-text">pacman -S linux-lts</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problem-card">
+                <div class="card-header">Проблема с оборудованием</div>
+                <div class="card-body">
+                    <p class="card-desc">Необычные проблемы с определенным железом</p>
+
+                    <div class="command-wrapper">
+                        <div class="command-comment"># Просмотр логов ядра</div>
+                        <div class="command-container">
+                            <div class="command-text">dmesg | grep -i error</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problem-card">
+                <div class="card-header">Экзотические ошибки</div>
+                <div class="card-body">
+                    <p class="card-desc">Очень редкие и странные ошибки</p>
+
+                    <div class="command-wrapper">
+                        <div class="command-comment"># Проверка файловых систем</div>
+                        <div class="command-container">
+                            <div class="command-text">fsck /dev/sdX</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problem-card">
+                <div class="card-header">Проблемы с AUR</div>
+                <div class="card-body">
+                    <p class="card-desc">Сложные случаи с AUR помощниками</p>
+
+                    <div class="command-wrapper">
+                        <div class="command-comment"># Очистка кэша AUR</div>
+                        <div class="command-container">
+                            <div class="command-text">rm -rf ~/.cache/yay</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="app"></div>
+    <script type="module" src="../main.js"></script>
+</body>
+</html>

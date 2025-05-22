@@ -185,24 +185,24 @@ export default {
             {
               title: "ШАГ 1: Подготовка",
               desc: "Скачайте образ Arch Linux и создайте загрузочную флешку",
-              link: "install_archinstall_1.html"
+              link: "instructions.html#archinstall_1"
             },
             {
               title: "ШАГ 2: Загрузка",
               desc: "Загрузитесь с флешки и запустите archinstall",
-              link: "install_archinstall_2.html"
+              link: "instructions.html#archinstall_2"
             }
           ],
           [
             {
               title: "ШАГ 3: Настройка",
               desc: "Выберите параметры установки в интерактивном меню",
-              link: "install_archinstall_3.html"
+              link: "instructions.html#archinstall_3"
             },
             {
               title: "ШАГ 4: Завершение",
               desc: "Дождитесь окончания установки и перезагрузитесь",
-              link: "install_archinstall_4.html"
+              link: "instructions.html#archinstall_4"
             }
           ]
         ],
@@ -211,24 +211,24 @@ export default {
             {
               title: "ШАГ 1: Разметка диска",
               desc: "Создайте разделы с помощью fdisk или cfdisk",
-              link: "install_manual_1.html"
+              link: "instructions.html#manual"
             },
             {
               title: "ШАГ 2: Форматирование",
               desc: "Отформатируйте разделы и создайте файловые системы",
-              link: "install_manual_2.html"
+              link: "instructions.html#manual"
             }
           ],
           [
             {
               title: "ШАГ 3: Монтирование",
               desc: "Смонтируйте разделы и установите базовую систему",
-              link: "install_manual_3.html"
+              link: "instructions.html#manual"
             },
             {
               title: "ШАГ 4: Настройка",
               desc: "Настройте систему, установите загрузчик и пользователя",
-              link: "install_manual_4.html"
+              link: "instructions.html#manual"
             }
           ]
         ]

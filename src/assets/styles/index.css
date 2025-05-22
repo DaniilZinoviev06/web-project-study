@@ -243,7 +243,7 @@
     transition: height 0.5s;
 }
 
-.overlay p {
+.overlay a {
     font-weight: 500;
     margin-bottom: 5px;
     margin-top: 45%;

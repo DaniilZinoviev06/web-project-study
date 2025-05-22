@@ -20,8 +20,6 @@
         <div class="nav-links">
             <a href="#archinstall" class="nav-link">Archinstall</a>
             <a href="#manual" class="nav-link">Ручная установка</a>
-            <a href="#common-problems" class="nav-link">Частые проблемы</a>
-            <a href="#rare-problems" class="nav-link">Редкие проблемы</a>
         </div>
     </div>
 
@@ -30,7 +28,7 @@
 
         <div class="instructions-grid">
             <div class="instruction-card">
-                <h3 class="card-header">ШАГ 1: Подготовка</h3>
+                <h3 class="card-header" id="archinstall_1">ШАГ 1: Подготовка</h3>
                 <div class="card-body">
                     <p class="card-desc">Скачайте образ Arch Linux и создайте загрузочную флешку</p>
                     <div class="command-wrapper">
@@ -56,7 +54,7 @@
             </div>
 
             <div class="instruction-card">
-                <h3 class="card-header">ШАГ 2: Загрузка</h3>
+                <h3 class="card-header" id="archinstall_2">ШАГ 2: Загрузка</h3>
                 <div class="card-body">
                     <p class="card-desc">Загрузитесь с флешки и запустите archinstall</p>
                     <div class="command-wrapper">
@@ -82,7 +80,7 @@
             </div>
 
             <div class="instruction-card">
-                <h3 class="card-header">ШАГ 3: Настройка</h3>
+                <h3 class="card-header" id="archinstall_3">ШАГ 3: Настройка</h3>
                 <div class="card-body">
                     <p class="card-desc">Выберите параметры установки в интерактивном меню</p>
 
@@ -96,13 +94,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <a href="install_archinstall_3.html" class="read-more">Подробнее</a>
-                </div>
             </div>
 
             <div class="instruction-card">
-                <h3 class="card-header">ШАГ 4: Завершение</h3>
+                <h3 class="card-header" id="archinstall_4">ШАГ 4: Завершение</h3>
                 <div class="card-body">
                     <p class="card-desc">Дождитесь окончания установки и перезагрузитесь</p>
 
@@ -165,7 +160,7 @@
                                 <li>EFI раздел: 512M, тип EFI System</li>
                                 <li>Root раздел: 20-30G, тип Linux filesystem</li>
                                 <li>Home раздел: остальное место, тип Linux filesystem</li>
-                            </ul>
+                            </ul><br>
                             <p>Для BIOS:</p>
                             <ul>
                                 <li>Boot раздел: 1M, тип BIOS boot</li>
@@ -176,9 +171,6 @@
                     </div>
                 </div>
 
-                <div class="card-footer" style="margin-top: 20px;">
-                    <a href="install_manual_1.html" class="read-more">Подробнее</a>
-                </div>
             </div>
 
             <div id="manual-2" class="tab-content">
