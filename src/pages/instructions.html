@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Arch community - Инструкции</title>
+    <meta name="description" content="Arch community - сообщество разработчиков и энтузиастов open-source. На данной странице Вы можете ознакомиться с инструкциями по установке Arch Linux">
+    <meta name="keywords" content="Инструкции, установка, Arch, Linux">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../assets/styles/instructions.css">
+    <script src="../scripts/instructions.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="arch-link">Инструкции</h1>
+    </div>
+
+    <div class="nav-container">
+        <div class="nav-title">Быстрая навигация:</div>
+        <div class="nav-links">
+            <a href="#archinstall" class="nav-link">Archinstall</a>
+            <a href="#manual" class="nav-link">Ручная установка</a>
+            <a href="#common-problems" class="nav-link">Частые проблемы</a>
+            <a href="#rare-problems" class="nav-link">Редкие проблемы</a>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <h2 id="archinstall" class="section-title">Установка с помощью archinstall</h2>
+
+        <div class="instructions-grid">
+            <div class="instruction-card">
+                <h3 class="card-header">ШАГ 1: Подготовка</h3>
+                <div class="card-body">
+                    <p class="card-desc">Скачайте образ Arch Linux и создайте загрузочную флешку</p>
+                    <div class="command-wrapper">
+                        <div class="command-comment"># Проверить подключенные диски</div>
+                        <div class="command-container">
+                            <div class="command-text">lsblk</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-wrapper">
+                        <div class="command-comment"># Записать образ на флешку (замените /dev/sdX на ваше устройство)</div>
+                        <div class="command-container">
+                            <div class="command-text">dd if=archlinux.iso of=/dev/sdX bs=4M status=progress oflag=sync</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="instruction-card">
+                <h3 class="card-header">ШАГ 2: Загрузка</h3>
+                <div class="card-body">
+                    <p class="card-desc">Загрузитесь с флешки и запустите archinstall</p>
+                    <div class="command-wrapper">
+                        <div class="command-comment"># Запустить установщик</div>
+                        <div class="command-container">
+                            <div class="command-text">archinstall</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="command-wrapper">
+                        <div class="command-comment"># Если нет интернета (проверьте интерфейс с ifconfig)</div>
+                        <div class="command-container">
+                            <div class="command-text">dhcpcd eth0</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="instruction-card">
+                <h3 class="card-header">ШАГ 3: Настройка</h3>
+                <div class="card-body">
+                    <p class="card-desc">Выберите параметры установки в интерактивном меню</p>
+
+                    <div class="command-wrapper">
+                        <div class="command-comment"># Основные параметры для выбора:</div>
+                        <div class="command-container">
+                            <div class="command-text">Язык: Russian - Раскладка: ru - Диск: (выберите ваш диск) - Файловая система: ext4 - Ядро: linux - Сеть: dhcpcd</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="install_archinstall_3.html" class="read-more">Подробнее</a>
+                </div>
+            </div>
+
+            <div class="instruction-card">
+                <h3 class="card-header">ШАГ 4: Завершение</h3>
+                <div class="card-body">
+                    <p class="card-desc">Дождитесь окончания установки и перезагрузитесь</p>
+
+                    <div class="command-wrapper">
+                        <div class="command-comment"># После установки</div>
+                        <div class="command-container">
+                            <div class="command-text">exit umount -R /mnt reboot</div>
+                            <div class="copy-btn-container" title="Копировать">
+                                <i class="far fa-copy copy-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="manual" class="section-title">Ручная установка</h2>
+
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="manual-1">Разметка диска</button>
+                <button class="tab-btn" data-tab="manual-2">Форматирование</button>
+                <button class="tab-btn" data-tab="manual-3">Монтирование</button>
+                <button class="tab-btn" data-tab="manual-4">Настройка</button>
+            </div>
+
+            <div id="manual-1" class="tab-content active">
+                <h3 class="subsection-title">ШАГ 1: Разметка диска</h3>
+                <p>Создайте разделы с помощью fdisk или cfdisk</p>
+
+                <div class="command-wrapper">
+                    <div class="command-comment"># Запустить cfdisk (более дружелюбный интерфейс)</div>
+                    <div class="command-container">
+                        <div class="command-text">cfdisk /dev/sdX</div>
+                        <div class="copy-btn-container" title="Копировать">
+                            <i class="far fa-copy copy-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-wrapper">
+                    <div class="command-comment"># Или fdisk для более продвинутых пользователей</div>
+                    <div class="command-container">
+                        <div class="command-text">fdisk /dev/sdX</div>
+                        <div class="copy-btn-container" title="Копировать">
+                            <i class="far fa-copy copy-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <span>Рекомендуемая схема разделов</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>Для UEFI:</p>
+                            <ul>
+                                <li>EFI раздел: 512M, тип EFI System</li>
+                                <li>Root раздел: 20-30G, тип Linux filesystem</li>
+                                <li>Home раздел: остальное место, тип Linux filesystem</li>
+                            </ul>
+                            <p>Для BIOS:</p>
+                            <ul>
+                                <li>Boot раздел: 1M, тип BIOS boot</li>
+                                <li>Root раздел: 20-30G, тип Linux filesystem</li>
+                                <li>Home раздел: остальное место, тип Linux filesystem</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer" style="margin-top: 20px;">
+                    <a href="install_manual_1.html" class="read-more">Подробнее</a>
+                </div>
+            </div>
+
+            <div id="manual-2" class="tab-content">
+                <h3 class="subsection-title">ШАГ 2: Форматирование</h3>
+                <p>Отформатируйте разделы и создайте файловые системы</p>
+
+                <div class="command-wrapper">
+                    <div class="command-comment"> # Для EFI раздела (если UEFI)</div>
+                    <div class="command-container">
+                        <div class="command-text">mkfs.fat -F32 /dev/sdX1</div>
+                        <div class="copy-btn-container" title="Копировать">
+                            <i class="far fa-copy copy-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-wrapper">
+                    <div class="command-comment"># Для корневого раздела (ext4)</div>
+                    <div class="command-container">
+                        <div class="command-text">mkfs.ext4 /dev/sdX2</div>
+                        <div class="copy-btn-container" title="Копировать">
+                            <i class="far fa-copy copy-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-wrapper">
+                    <div class="command-comment"># Для home раздела (можно btrfs или ext4)</div>
+                    <div class="command-container">
+                        <div class="command-text">mkfs.ext4 /dev/sdX3</div>
+                        <div class="copy-btn-container" title="Копировать">
+                            <i class="far fa-copy copy-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="manual-3" class="tab-content">
+                <h3 class="subsection-title">ШАГ 3: Монтирование</h3>
+                <p>Смонтируйте разделы и установите базовую систему</p>
+
+                <div class="command-wrapper">
+                    <div class="command-comment"># Монтирование корневого раздела</div>
+                    <div class="command-container">
+                        <div class="command-text">mount /dev/sdX2 /mnt</div>
+                        <div class="copy-btn-container" title="Копировать">
+                            <i class="far fa-copy copy-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-wrapper">
+                    <div class="command-comment"># Создание и монтирование остальных разделов</div>
+                    <div class="command-container">
+                        <div class="command-text">mkdir /mnt/boot<br> mount /dev/sdX1 /mnt/boot<br> mkdir /mnt/home<br> mount /dev/sdX3 /mnt/home</div>
+                        <div class="copy-btn-container" title="Копировать">
+                            <i class="far fa-copy copy-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-wrapper">
+                    <div class="command-comment"># Установка базовой системы</div>
+                    <div class="command-container">
+                        <div class="command-text">pacstrap /mnt base linux linux-firmware</div>
+                        <div class="copy-btn-container" title="Копировать">
+                            <i class="far fa-copy copy-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="manual-4" class="tab-content">
+                <h3 class="subsection-title">ШАГ 4: Настройка</h3>
+                <p>Настройте систему, установите загрузчик и пользователя</p>
+
+                <div class="command-wrapper">
+                    <div class="command-comment"># Генерация fstab</div>
+                    <div class="command-container">
+                        <div class="command-text">genfstab -U /mnt >> /mnt/etc/fstab</div>
+                        <div class="copy-btn-container" title="Копировать">
+                            <i class="far fa-copy copy-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-wrapper">
+                    <div class="command-comment"># Переход в установленную систему</div>
+                    <div class="command-container">
+                        <div class="command-text">arch-chroot /mnt</div>
+                        <div class="copy-btn-container" title="Копировать">
+                            <i class="far fa-copy copy-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-wrapper">
+                    <div class="command-comment"># Установка загрузчика (для GRUB)</div>
+                    <div class="command-container">
+                        <div class="command-text">pacman -S grub<br> grub-install /dev/sdX<br> grub-mkconfig -o /boot/grub/grub.cfg<br></div>
+                        <div class="copy-btn-container" title="Копировать">
+                            <i class="far fa-copy copy-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="command-wrapper">
+                    <div class="command-comment"># Создание пользователя</div>
+                    <div class="command-container">
+                        <div class="command-text">useradd -m -G wheel -s /bin/bash username passwd username</div>
+                        <div class="copy-btn-container" title="Копировать">
+                            <i class="far fa-copy copy-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="app"></div>
+    <script type="module" src="../main.js"></script>
+</body>
+</html>
