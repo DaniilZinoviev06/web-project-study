@@ -240,31 +240,31 @@ export default {
             {
               title: "Проблема с загрузкой",
               desc: "Частая проблема при загрузке системы после установки",
-              link: "problem_1.html"
+              link: "problems.html#problem_common_1"
             },
             {
               title: "Проблема с сетью",
               desc: "Типичные проблемы с подключением к интернету",
-              link: "problem_1.html"
+              link: "problems.html#problem_common_2"
             }
           ],
           [
             {
               title: "Проблема с драйверами",
               desc: "Решение распространенных проблем с драйверами",
-              link: "problem_1.html"
+              link: "problems.html#problem_common_3"
             },
             {
               title: "Проблема с пакетами",
               desc: "Частые ошибки при установке пакетов",
-              link: "problem_1.html"
+              link: "problems.html#problem_common_4"
             }
           ],
           [
             {
               title: "Другие проблемы",
               desc: "Разные часто встречающиеся проблемы",
-              link: "problem_1.html"
+              link: "problems.html"
             },
             null
           ]
@@ -274,31 +274,31 @@ export default {
             {
               title: "Редкая проблема с ядром",
               desc: "Специфические проблемы с ядром Linux",
-              link: "problem_rare_1.html"
+              link: "problems.html#problem_rare_1"
             },
             {
               title: "Проблема с оборудованием",
               desc: "Необычные проблемы с определенным железом",
-              link: "problem_rare_1.html"
+              link: "problems.html#problem_rare_2"
             }
           ],
           [
             {
               title: "Экзотические ошибки",
               desc: "Очень редкие и странные ошибки",
-              link: "problem_rare_1.html"
+              link: "problems.html#problem_rare_3"
             },
             {
               title: "Проблемы с AUR",
               desc: "Сложные случаи с AUR помощниками",
-              link: "problem_rare_1.html"
+              link: "problems.html#problem_rare_4"
             }
           ],
           [
             {
               title: "Другие редкие проблемы",
               desc: "Прочие нечасто встречающиеся ситуации",
-              link: "problem_rare_1.html"
+              link: "problems.html"
             },
             null
           ]
