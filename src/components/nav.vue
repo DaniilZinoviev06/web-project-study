@@ -68,7 +68,7 @@
           </li>
 
           <li class="dropdown-parent">
-            <a href="news.html">Инструкции</a>
+            <a href="instructions.html">Инструкции</a>
             <div class="dropdown-menu">
               <div class="dropdown-menu-inner">
                 <div class="dropdown-left">
