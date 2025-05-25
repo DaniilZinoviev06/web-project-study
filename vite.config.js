@@ -7,21 +7,26 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, 'index.html'),
-        about: path.resolve(__dirname, 'about.html'),
-        contacts: path.resolve(__dirname, 'contacts.html'),
-        instructions: path.resolve(__dirname, 'instructions.html'),
-        problems: path.resolve(__dirname, 'problems.html'),
-        news: path.resolve(__dirname, 'news.html')
+        index: path.resolve(__dirname, 'src/pages/index.html'),
+        about: path.resolve(__dirname, 'src/pages/about.html'),
+        contacts: path.resolve(__dirname, 'src/pages/contacts.html'),
+        instructions: path.resolve(__dirname, 'src/pages/instructions.html'),
+        problems: path.resolve(__dirname, 'src/pages/problems.html'),
+        news: path.resolve(__dirname, 'src/pages/news.html')
       },
+      output: {
+        entryFileNames: 'scripts/[name].js',
+        chunkFileNames: 'scripts/[name].js',
+        assetFileNames: 'assets/[name][extname]',
+        manualChunks: undefined
+      },
+      preserveEntrySignatures: 'strict' // для MPA
     },
     outDir: 'dist',
     emptyOutDir: true,
+    minify: false
   },
   base: './',
-  server: {
-    open: '/src/pages/index.html'
-  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')

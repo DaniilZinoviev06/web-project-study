@@ -440,19 +440,19 @@ video_player.addEventListener('mouseover', () => {
 
 //timeoutId = setTimeout(hideControls, 2000);
 
-const thumbnails = [],
-thumbnailWidth = 158,
-thumbnailHeight = 90,
-horizontalItemCount = 5,
-verticalItemCount = 5;
+    const thumbnails = [],
+    thumbnailWidth = 158,
+    thumbnailHeight = 90,
+    horizontalItemCount = 5,
+    verticalItemCount = 5;
 
-let preview_video = document.createElement('video');
-preview_video.preload = "metadata";
-preview_video.width = "500";
-preview_video.height = "300";
-preview_video.controls = true;
-preview_video.src = mainVideo.querySelector("source").src;
-preview_video.addEventListener("loadeddata", async function () {
+    let preview_video = document.createElement('video');
+    preview_video.preload = "metadata";
+    preview_video.width = "500";
+    preview_video.height = "300";
+    preview_video.controls = true;
+    preview_video.src = mainVideo.querySelector("source").src;
+    preview_video.addEventListener("loadeddata", async function () {
     preview_video.pause();
 
     var count = 1;

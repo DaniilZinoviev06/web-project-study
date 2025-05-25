@@ -166,7 +166,6 @@
 
 .material-icons {
     user-select:none;
-    -webkit-user-select:none;
     cursor:pointer;
 }
 
@@ -372,7 +371,7 @@
 .volume-range {
     -webkit-appearance:none;
     appearance:none;
-    display: hidden;
+    display: none;
     height:3px;
     background:white;
     width:0px;
@@ -399,7 +398,7 @@
 
 .controls .icon:hover .volume-range {
     width:60px;
-    display:inlin-block;
+    display:inline-block;
 }
 
 .controls .icon:hover .volume-range::-webkit-slider-thumb {
